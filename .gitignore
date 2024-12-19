@@ -1,0 +1,47 @@
+# Node.js
+node_modules/         # Pasta de dependências
+npm-debug.log*        # Logs de erro do NPM
+yarn-debug.log*       # Logs do Yarn
+yarn-error.log*       # Logs de erro do Yarn
+package-lock.json     # Bloqueio de versão das dependências (opcional)
+
+# IDEs e Editores
+.vscode/              # Configuração do Visual Studio Code
+.idea/                # Configuração do JetBrains (WebStorm)
+*.swp                 # Arquivos temporários de editores de texto
+
+# Configuração de Ambiente
+.env                  # Arquivo de variáveis de ambiente
+.env.local            # Arquivo de configuração local
+.env.*.local          # Outros arquivos de configuração de ambiente
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Banco de Dados
+*.sqlite
+*.db
+
+# Arquivos de Build e Dist
+build/
+dist/
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+
+# Sistema Operacional
+.DS_Store             # Arquivo MacOS
+Thumbs.db            # Arquivo Windows
+desktop.ini          # Arquivo Windows
+
+# Arquivos Temporários
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
