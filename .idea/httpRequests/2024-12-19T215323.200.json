@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "status": "Pendente",
+    "valorTotal": 48,
+    "createdAt": "2024-12-20T00:39:27.000Z",
+    "updatedAt": "2024-12-20T00:39:27.000Z",
+    "Items": [
+      {
+        "id": 1,
+        "nome": "Pizza Margherita",
+        "descricao": "Pizza com queijo e tomate",
+        "valor": 25,
+        "imagem": "pizza.jpg",
+        "createdAt": "2024-12-20T00:35:36.000Z",
+        "updatedAt": "2024-12-20T00:35:36.000Z",
+        "ItemPedido": {
+          "quantidade": 2,
+          "observacao": "Sem cebola"
+        }
+      },
+      {
+        "id": 2,
+        "nome": "Hambúrguer",
+        "descricao": "Hambúrguer com queijo, bacon e alface",
+        "valor": 28,
+        "imagem": "hamburguer.jpg",
+        "createdAt": "2024-12-20T00:36:35.000Z",
+        "updatedAt": "2024-12-20T00:36:35.000Z",
+        "ItemPedido": {
+          "quantidade": 1,
+          "observacao": ""
+        }
+      }
+    ]
+  }
+]

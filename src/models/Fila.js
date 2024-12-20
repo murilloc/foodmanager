@@ -1,22 +1,12 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/db');
-const Pedido = require('./Pedido');
+// src/models/Fila.js
+const mongoose = require('mongoose');
 
-const Fila = sequelize.define('Fila', {
-  posicao: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
-  status: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-}, {
-  timestamps: true, // Cria campos createdAt e updatedAt automaticamente
+const FilaSchema = new mongoose.Schema({
+  PedidoId: { type: mongoose.Schema.Types.ObjectId, ref: 'Pedido' },
+  posicao: { type: Number, required: true },
+  status: { type: String, required: true },
+  criadoEm: { type: Date, default: Date.now },
 });
 
-// Associações
-Pedido.hasMany(Fila, { foreignKey: 'PedidoId' });
-Fila.belongsTo(Pedido, { foreignKey: 'PedidoId' });
+module.exports = mongoose.model('Fila', FilaSchema);
 
-module.exports = Fila;

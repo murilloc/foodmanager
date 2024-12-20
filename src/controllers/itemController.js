@@ -1,11 +1,10 @@
 // src/controllers/itemController.js
-const { Item } = require('../models');
+const Item = require('../models/Item');
 
 // Criar Item
 exports.criarItem = async (req, res) => {
   try {
-    const { nome, descricao, valor, imagem } = req.body;
-    const novoItem = await Item.create({ nome, descricao, valor, imagem });
+    const novoItem = await Item.create(req.body);
     res.status(201).json(novoItem);
   } catch (error) {
     res.status(500).json({ message: 'Erro ao criar item', error });
@@ -15,7 +14,7 @@ exports.criarItem = async (req, res) => {
 // Listar Todos os Itens
 exports.listarItens = async (req, res) => {
   try {
-    const itens = await Item.findAll();
+    const itens = await Item.find();
     res.status(200).json(itens);
   } catch (error) {
     res.status(500).json({ message: 'Erro ao listar itens', error });
@@ -25,8 +24,7 @@ exports.listarItens = async (req, res) => {
 // Buscar Item por ID
 exports.buscarItem = async (req, res) => {
   try {
-    const { id } = req.params;
-    const item = await Item.findByPk(id);
+    const item = await Item.findById(req.params.id);
     if (!item) {
       return res.status(404).json({ message: 'Item não encontrado' });
     }
@@ -39,16 +37,11 @@ exports.buscarItem = async (req, res) => {
 // Atualizar Item
 exports.atualizarItem = async (req, res) => {
   try {
-    const { id } = req.params;
-    const { nome, descricao, valor, imagem } = req.body;
-    const item = await Item.findByPk(id);
-
-    if (!item) {
+    const itemAtualizado = await Item.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (!itemAtualizado) {
       return res.status(404).json({ message: 'Item não encontrado' });
     }
-
-    await item.update({ nome, descricao, valor, imagem });
-    res.status(200).json(item);
+    res.status(200).json(itemAtualizado);
   } catch (error) {
     res.status(500).json({ message: 'Erro ao atualizar item', error });
   }
@@ -57,17 +50,12 @@ exports.atualizarItem = async (req, res) => {
 // Deletar Item
 exports.deletarItem = async (req, res) => {
   try {
-    const { id } = req.params;
-    const item = await Item.findByPk(id);
-
-    if (!item) {
+    const itemDeletado = await Item.findByIdAndDelete(req.params.id);
+    if (!itemDeletado) {
       return res.status(404).json({ message: 'Item não encontrado' });
     }
-
-    await item.destroy();
-    res.status(204).send();
+    res.status(204).send(); // Sem conteúdo
   } catch (error) {
     res.status(500).json({ message: 'Erro ao deletar item', error });
   }
 };
-

@@ -1,19 +1,10 @@
 // src/controllers/avaliacaoController.js
+const Avaliacao = require('../models/Avaliacao');
 
-const { Avaliacao, Pedido } = require('../models');
-
-// Criar Avaliação (POST)
+// Criar Avaliação
 exports.criarAvaliacao = async (req, res) => {
   try {
-    const { PedidoId, nota, comentario } = req.body;
-
-    // Verificar se o Pedido existe
-    const pedido = await Pedido.findByPk(PedidoId);
-    if (!pedido) {
-      return res.status(404).json({ message: 'Pedido não encontrado' });
-    }
-
-    const novaAvaliacao = await Avaliacao.create({ PedidoId, nota, comentario });
+    const novaAvaliacao = await Avaliacao.create(req.body);
     res.status(201).json(novaAvaliacao);
   } catch (error) {
     res.status(500).json({ message: 'Erro ao criar avaliação', error });
@@ -23,67 +14,46 @@ exports.criarAvaliacao = async (req, res) => {
 // Listar Todas as Avaliações
 exports.listarAvaliacoes = async (req, res) => {
   try {
-    const avaliacoes = await Avaliacao.findAll({
-      include: {
-        model: Pedido,  // Deve corresponder à associação no modelo
-        attributes: ['id', 'status', 'valorTotal'],
-      },
-    });
+    const avaliacoes = await Avaliacao.find().populate('PedidoId', 'status valorTotal');
     res.status(200).json(avaliacoes);
   } catch (error) {
-    console.error('Erro ao listar avaliações:', error);  // Log para diagnóstico
     res.status(500).json({ message: 'Erro ao listar avaliações', error });
   }
 };
 
-// Buscar Avaliação por ID (GET)
+// Buscar Avaliação por ID
 exports.buscarAvaliacao = async (req, res) => {
   try {
-    const { id } = req.params;
-    const avaliacao = await Avaliacao.findByPk(id, {
-      include: { model: Pedido, attributes: ['id', 'status'] },
-    });
-
+    const avaliacao = await Avaliacao.findById(req.params.id).populate('PedidoId', 'status valorTotal');
     if (!avaliacao) {
       return res.status(404).json({ message: 'Avaliação não encontrada' });
     }
-
     res.status(200).json(avaliacao);
   } catch (error) {
     res.status(500).json({ message: 'Erro ao buscar avaliação', error });
   }
 };
 
-// Atualizar Avaliação (PUT)
+// Atualizar Avaliação
 exports.atualizarAvaliacao = async (req, res) => {
   try {
-    const { id } = req.params;
-    const { nota, comentario } = req.body;
-
-    const avaliacao = await Avaliacao.findByPk(id);
-
-    if (!avaliacao) {
+    const avaliacaoAtualizada = await Avaliacao.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (!avaliacaoAtualizada) {
       return res.status(404).json({ message: 'Avaliação não encontrada' });
     }
-
-    await avaliacao.update({ nota, comentario });
-    res.status(200).json(avaliacao);
+    res.status(200).json(avaliacaoAtualizada);
   } catch (error) {
     res.status(500).json({ message: 'Erro ao atualizar avaliação', error });
   }
 };
 
-// Deletar Avaliação (DELETE)
+// Deletar Avaliação
 exports.deletarAvaliacao = async (req, res) => {
   try {
-    const { id } = req.params;
-    const avaliacao = await Avaliacao.findByPk(id);
-
-    if (!avaliacao) {
+    const avaliacaoDeletada = await Avaliacao.findByIdAndDelete(req.params.id);
+    if (!avaliacaoDeletada) {
       return res.status(404).json({ message: 'Avaliação não encontrada' });
     }
-
-    await avaliacao.destroy();
     res.status(204).send(); // Sem conteúdo
   } catch (error) {
     res.status(500).json({ message: 'Erro ao deletar avaliação', error });

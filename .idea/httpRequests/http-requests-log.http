@@ -1,0 +1,331 @@
+POST http://localhost:3000/api/itens
+Accept: application/json
+Content-Type: application/json
+Content-Length: 119
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "nome": "Pizza Margherita",
+  "descricao": "Pizza com queijo e tomate",
+  "valor": 25.00,
+  "imagem": "pizza.jpg"
+}
+
+<> 2024-12-20T203122.201.json
+
+###
+
+POST http://localhost:3000/api/itens
+Accept: application/json
+Content-Length: 119
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "nome": "Pizza Margherita",
+  "descricao": "Pizza com queijo e tomate",
+  "valor": 25.00,
+  "imagem": "pizza.jpg"
+}
+
+<> 2024-12-20T202927.500.json
+
+###
+
+GET http://localhost:3000/api/fila
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2024-12-19T220229-2.200.json
+
+###
+
+GET http://localhost:3000/api/pedidos
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+<> 2024-12-19T220229-1.200.json
+
+###
+
+GET http://localhost:3000/api/avaliacoes
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+<> 2024-12-19T220229.200.json
+
+###
+
+GET http://localhost:3000/api/avaliacoes
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+<> 2024-12-19T220208.200.json
+
+###
+
+GET http://localhost:3000/api/pedidos
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+<> 2024-12-19T220203.200.json
+
+###
+
+GET http://localhost:3000/api/fila
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2024-12-19T220156.200.json
+
+###
+
+GET http://localhost:3000/api/fila
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2024-12-19T215521.500.json
+
+###
+
+GET http://localhost:3000/api/pedidos
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+<> 2024-12-19T215323.200.json
+
+###
+
+GET http://localhost:3000/api/avaliacoes
+Accept: application/json
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+<> 2024-12-19T215233.200.json
+
+###
+
+GET http://localhost:3000/api/avaliacoes
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2024-12-19T214525.500.json
+
+###
+
+GET http://localhost:3000/api/pedidos
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2024-12-19T214514.200.json
+
+###
+
+GET http://localhost:3000/api/avaliacoes
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2024-12-19T214414.500.json
+
+###
+
+GET http://localhost:3000/api/fila
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2024-12-19T214256.500.json
+
+###
+
+GET http://localhost:3000/api/avaliacoes
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2024-12-19T214236.500.json
+
+###
+
+GET http://localhost:3000/api/pedidos
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2024-12-19T214231.200.json
+
+###
+
+GET http://localhost:3000/api/avaliacoes
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2024-12-19T214204.500.json
+
+###
+
+GET http://localhost:3000/api/pedidos
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2024-12-19T214141.200.json
+
+###
+
+GET http://localhost:3000/api/itens
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2024-12-19T214110.200.json
+
+###
+
+POST http://localhost:3000/api/fila
+Accept: application/json
+Content-Type: application/json
+Content-Length: 74
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "PedidoId": 1,
+  "posicao": 1,
+  "status": "Aguardando Preparação"
+}
+
+<> 2024-12-19T214041.201.json
+
+###
+
+POST http://localhost:3000/api/avaliacoes
+Accept: application/json
+Content-Type: application/json
+Content-Length: 71
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "PedidoId": 1,
+  "nota": 5,
+  "comentario": "Excelente serviço!"
+}
+
+<> 2024-12-19T214007.201.json
+
+###
+
+POST http://localhost:3000/api/pedidos
+Accept: application/json
+Content-Type: application/json
+Content-Length: 224
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "status": "Pendente",
+  "valorTotal": 48.00,
+  "itens": [
+    {
+      "id": 1,
+      "quantidade": 2,
+      "observacao": "Sem cebola"
+    },
+    {
+      "id": 2,
+      "quantidade": 1,
+      "observacao": ""
+    }
+  ]
+}
+
+<> 2024-12-19T213927.201.json
+
+###
+
+POST http://localhost:3000/api/itens
+Accept: application/json
+Content-Type: application/json
+Content-Length: 112
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "nome": "Batata Frita",
+  "descricao": "Batata frita crocante",
+  "valor": 18.00,
+  "imagem": "batata.jpg"
+}
+
+<> 2024-12-19T213750.201.json
+
+###
+
+POST http://localhost:3000/api/itens
+Accept: application/json
+Content-Type: application/json
+Content-Length: 111
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "nome": "Coca-Cola 350ml",
+  "descricao": "Refrigerante em lata",
+  "valor": 7.00,
+  "imagem": "coca.jpg"
+}
+
+<> 2024-12-19T213715.201.json
+
+###
+
+POST http://localhost:3000/api/itens
+Accept: application/json
+Content-Type: application/json
+Content-Length: 132
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "nome": "Hambúrguer",
+  "descricao": "Hambúrguer com queijo, bacon e alface",
+  "valor": 28.00,
+  "imagem": "hamburguer.jpg"
+}
+
+<> 2024-12-19T213635.201.json
+
+###
+
+POST http://localhost:3000/api/itens
+Accept: application/json
+Content-Type: application/json
+Content-Length: 119
+User-Agent: IntelliJ HTTP Client/WebStorm 2024.3.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+  "nome": "Pizza Margherita",
+  "descricao": "Pizza com queijo e tomate",
+  "valor": 25.00,
+  "imagem": "pizza.jpg"
+}
+
+<> 2024-12-19T213536.201.json
+
+###
+

@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "nota": 5,
+    "comentario": "Excelente serviço!",
+    "createdAt": "2024-12-20T00:40:07.000Z",
+    "updatedAt": "2024-12-20T00:40:07.000Z",
+    "PedidoId": null,
+    "Pedido": null
+  }
+]

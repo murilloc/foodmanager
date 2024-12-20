@@ -1,22 +1,33 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/db');
-const Pedido = require('./Pedido');
-const Item = require('./Item');
+// src/models/ItemPedido.js
+const mongoose = require('mongoose');
 
-const ItemPedido = sequelize.define('ItemPedido', {
+// Definição do Schema
+const ItemPedidoSchema = new mongoose.Schema({
+  PedidoId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Pedido', // Referência para a coleção Pedido
+    required: true,
+  },
+  ItemId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Item', // Referência para a coleção Item
+    required: true,
+  },
   quantidade: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
+    type: Number,
+    required: true,
+    min: 1,
   },
   observacao: {
-    type: DataTypes.TEXT,
-    allowNull: true,
+    type: String,
+    default: '',
   },
-}, {
-  timestamps: true, // Cria campos createdAt e updatedAt automaticamente
+  criadoEm: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
-Pedido.belongsToMany(Item, { through: ItemPedido });
-Item.belongsToMany(Pedido, { through: ItemPedido });
+// Exporta o Modelo
+module.exports = mongoose.model('ItemPedido', ItemPedidoSchema);
 
-module.exports = ItemPedido;

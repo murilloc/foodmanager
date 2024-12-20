@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "nome": "Pizza Margherita",
+    "descricao": "Pizza com queijo e tomate",
+    "valor": 25,
+    "imagem": "pizza.jpg",
+    "createdAt": "2024-12-20T00:35:36.000Z",
+    "updatedAt": "2024-12-20T00:35:36.000Z"
+  },
+  {
+    "id": 2,
+    "nome": "Hambúrguer",
+    "descricao": "Hambúrguer com queijo, bacon e alface",
+    "valor": 28,
+    "imagem": "hamburguer.jpg",
+    "createdAt": "2024-12-20T00:36:35.000Z",
+    "updatedAt": "2024-12-20T00:36:35.000Z"
+  },
+  {
+    "id": 3,
+    "nome": "Coca-Cola 350ml",
+    "descricao": "Refrigerante em lata",
+    "valor": 7,
+    "imagem": "coca.jpg",
+    "createdAt": "2024-12-20T00:37:15.000Z",
+    "updatedAt": "2024-12-20T00:37:15.000Z"
+  },
+  {
+    "id": 4,
+    "nome": "Batata Frita",
+    "descricao": "Batata frita crocante",
+    "valor": 18,
+    "imagem": "batata.jpg",
+    "createdAt": "2024-12-20T00:37:50.000Z",
+    "updatedAt": "2024-12-20T00:37:50.000Z"
+  }
+]

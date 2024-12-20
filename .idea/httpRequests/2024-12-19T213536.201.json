@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "nome": "Pizza Margherita",
+  "descricao": "Pizza com queijo e tomate",
+  "valor": 25,
+  "imagem": "pizza.jpg",
+  "updatedAt": "2024-12-20T00:35:36.683Z",
+  "createdAt": "2024-12-20T00:35:36.683Z"
+}

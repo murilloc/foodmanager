@@ -1,27 +1,12 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/db');
-const Pedido = require('./Pedido');
+// src/models/Avaliacao.js
+const mongoose = require('mongoose');
 
-const Avaliacao = sequelize.define('Avaliacao', {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
-  },
-  nota: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
-  comentario: {
-    type: DataTypes.TEXT,
-    allowNull: true,
-  },
-}, {
-  timestamps: true, // Cria campos createdAt e updatedAt automaticamente
+const AvaliacaoSchema = new mongoose.Schema({
+  PedidoId: { type: mongoose.Schema.Types.ObjectId, ref: 'Pedido' },
+  nota: { type: Number, required: true },
+  comentario: { type: String },
+  criadoEm: { type: Date, default: Date.now },
 });
 
-// Associações
-Pedido.hasMany(Avaliacao, { foreignKey: 'PedidoId' });
-Avaliacao.belongsTo(Pedido, { foreignKey: 'PedidoId' });
+module.exports = mongoose.model('Avaliacao', AvaliacaoSchema);
 
-module.exports = Avaliacao;

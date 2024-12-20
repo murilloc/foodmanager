@@ -1,0 +1,6 @@
+{
+  "message": "Erro ao listar pedidos na fila",
+  "error": {
+    "name": "SequelizeEagerLoadingError"
+  }
+}

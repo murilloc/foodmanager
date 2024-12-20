@@ -1,0 +1,32 @@
+{
+  "message": "Erro ao criar item",
+  "error": {
+    "errors": {
+      "valor": {
+        "name": "ValidatorError",
+        "message": "Path `valor` is required.",
+        "properties": {
+          "message": "Path `valor` is required.",
+          "type": "required",
+          "path": "valor"
+        },
+        "kind": "required",
+        "path": "valor"
+      },
+      "nome": {
+        "name": "ValidatorError",
+        "message": "Path `nome` is required.",
+        "properties": {
+          "message": "Path `nome` is required.",
+          "type": "required",
+          "path": "nome"
+        },
+        "kind": "required",
+        "path": "nome"
+      }
+    },
+    "_message": "Item validation failed",
+    "name": "ValidationError",
+    "message": "Item validation failed: valor: Path `valor` is required., nome: Path `nome` is required."
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "message": "Erro ao listar avaliações",
+  "error": {
+    "name": "SequelizeEagerLoadingError"
+  }
+}
