@@ -49,29 +49,64 @@ CREATE TABLE Fila (
     FOREIGN KEY (PedidoId) REFERENCES Pedido(id) ON DELETE CASCADE
 );
 
+-- Adicione as colunas às tabelas existentes
+ALTER TABLE Pedido ADD COLUMN createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE Pedido ADD COLUMN updatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
 
--- Inserir alguns registros de teste
+ALTER TABLE Item ADD COLUMN createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE Item ADD COLUMN updatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
 
+ALTER TABLE ItemPedido ADD COLUMN createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE ItemPedido ADD COLUMN updatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+ALTER TABLE Avaliacao ADD COLUMN createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE Avaliacao ADD COLUMN updatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+ALTER TABLE Fila ADD COLUMN createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE Fila ADD COLUMN updatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+
+
+-- Use o banco de dados correto
+USE foodmanager_db;
+
+-- Limpando tabelas existentes
+DELETE FROM Fila;
+DELETE FROM Avaliacao;
+DELETE FROM ItemPedido;
+DELETE FROM Pedido;
+DELETE FROM Item;
+
+-- Inserindo Itens
 INSERT INTO Item (nome, descricao, valor, imagem)
-VALUES 
-('Pizza Margherita', 'Pizza com molho de tomate, mussarela e manjericão', 25.00, 'pizza.jpg'),
-('Hambúrguer', 'Hambúrguer com queijo, bacon e alface', 18.00, 'hamburguer.jpg'),
-('Coca-Cola 350ml', 'Refrigerante em lata', 5.00, 'coca.jpg');
+VALUES
+    ('Pizza Margherita', 'Pizza com queijo e tomate', 25.00, 'pizza.jpg'),
+    ('Hambúrguer', 'Hambúrguer com queijo, bacon e alface', 18.00, 'hamburguer.jpg'),
+    ('Coca-Cola 350ml', 'Refrigerante em lata', 5.00, 'coca.jpg'),
+    ('Batata Frita', 'Batata frita crocante', 10.00, 'batata.jpg');
 
--- Criar um pedido de teste
-INSERT INTO Pedido (status, valorTotal) VALUES ('Pendente', 48.00);
+-- Criando Pedidos
+INSERT INTO Pedido (status, valorTotal)
+VALUES
+    ('Pendente', 50.00),
+    ('Concluído', 30.00);
 
--- Relacionar Itens ao Pedido
+-- Inserindo Itens de Pedidos
 INSERT INTO ItemPedido (PedidoId, ItemId, quantidade, observacao)
-VALUES 
-(1, 1, 1, 'Sem manjericão'),
-(1, 2, 1, ''),
-(1, 3, 2, 'Bem gelada');
+VALUES
+    (1, 1, 2, 'Sem manjericão'), -- Pizza Margherita
+    (1, 2, 1, ''),              -- Hambúrguer
+    (1, 3, 2, 'Bem gelada'),    -- Coca-Cola
+    (2, 4, 1, 'Extra crocante');-- Batata Frita
 
--- Inserir Avaliação
+-- Inserindo Avaliações
 INSERT INTO Avaliacao (PedidoId, nota, comentario)
-VALUES (1, 5, 'Excelente atendimento e comida!');
+VALUES
+    (1, 5, 'Excelente atendimento e comida!'),
+    (2, 4, 'Muito bom, mas a entrega demorou um pouco.');
 
--- Adicionar à Fila
+-- Adicionando à Fila
 INSERT INTO Fila (PedidoId, posicao, status)
-VALUES (1, 1, 'Aguardando Preparação');
+VALUES
+    (1, 1, 'Aguardando Preparação'),
+    (2, 2, 'Em Preparação');

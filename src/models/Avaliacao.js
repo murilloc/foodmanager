@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
+const Pedido = require('./Pedido');
 
 const Avaliacao = sequelize.define('Avaliacao', {
   id: {
@@ -15,6 +16,12 @@ const Avaliacao = sequelize.define('Avaliacao', {
     type: DataTypes.TEXT,
     allowNull: true,
   },
+}, {
+  timestamps: true, // Cria campos createdAt e updatedAt automaticamente
 });
+
+// Associações
+Pedido.hasMany(Avaliacao, { foreignKey: 'PedidoId' });
+Avaliacao.belongsTo(Pedido, { foreignKey: 'PedidoId' });
 
 module.exports = Avaliacao;

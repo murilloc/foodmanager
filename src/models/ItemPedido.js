@@ -12,6 +12,8 @@ const ItemPedido = sequelize.define('ItemPedido', {
     type: DataTypes.TEXT,
     allowNull: true,
   },
+}, {
+  timestamps: true, // Cria campos createdAt e updatedAt automaticamente
 });
 
 Pedido.belongsToMany(Item, { through: ItemPedido });

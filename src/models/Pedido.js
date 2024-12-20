@@ -16,6 +16,8 @@ const Pedido = sequelize.define('Pedido', {
     allowNull: false,
     defaultValue: 0.0,
   },
+}, {
+  timestamps: true, // Cria campos createdAt e updatedAt automaticamente
 });
 
 module.exports = Pedido;

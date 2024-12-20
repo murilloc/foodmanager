@@ -6,14 +6,14 @@ services:
     container_name: foodmanager_mysql
     restart: always
     ports:
-      - '33306:3306' # Porta mapeada (Host:Container)
+      - '33306:3306'
     environment:
-      MYSQL_ROOT_PASSWORD: rootpass # Senha do usuário root
-      MYSQL_DATABASE: foodmanager_db # Nome do banco de dados
-      MYSQL_USER: foodmanager_user # Usuário padrão
-      MYSQL_PASSWORD: foodmanager_pass # Senha do usuário padrão
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: foodmanager_db
+      MYSQL_USER: foodmanager_user
+      MYSQL_PASSWORD: foodmanager_pass
     volumes:
-      - db_data:/var/lib/mysql # Volume persistente para dados
+      - db_data:/var/lib/mysql
     networks:
       - foodmanager_network
 
